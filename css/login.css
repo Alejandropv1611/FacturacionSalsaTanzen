@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Open+Sans:wght@300;400;500;600;800&display=swap');
 * {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
     margin: 0;
     padding: 0;
 
 }
+
 
 section{
     display: flex;
@@ -11,7 +14,7 @@ section{
     align-items: center;
     width: 100%;
     min-height: 100vh;
-    background: url(/img/PerspektivaVugel.png) no-repeat;
+    background: url(../img/PerspektivaVugel.png) no-repeat;
     background-position: center;
     background-size: cover;
 }
@@ -88,6 +91,7 @@ input:valid ~ label{
     font-size: 1rem;
     padding: - 35px 0 5px;
     color: #fff;
+    letter-spacing: 2px;
 }
 
 .input-contenedor i{
@@ -128,7 +132,21 @@ button{
     color: #fff;
     background: #78288C;
     border: none;
-    font-weight: bold;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    font-size: 1rem;
+    transition: .4s;
+}
+
+button:hover{
+    width: 100%;
+    height: 45px;
+    border-radius: 40px;
+    color: #242121;
+    background: #fff;
+    border: none;
+    font-weight: 800;
     cursor: pointer;
     outline: none;
     font-size: 1rem;
@@ -155,4 +173,70 @@ button:hover{
 
 .registrar p a:hover{
     text-decoration: underline;
+}
+
+
+
+
+.input-contenedor select {
+    letter-spacing: 3px;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    padding: 5px 0;
+    color: #fff;
+    -webkit-appearance: none; /* Elimina el estilo predeterminado en Chrome/Safari */
+    -moz-appearance: none; /* Elimina el estilo predeterminado en Firefox */
+    appearance: none; /* Elimina el estilo predeterminado en otros navegadores */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="6" viewBox="0 0 12 6"><path d="M6 5l4-4H2z" fill="%23fff"/></svg>'); /* Agrega una flecha personalizada */
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+}
+
+.input-contenedor select::-ms-expand {
+    display: none; /* Oculta la flecha en Internet Explorer */
+}
+
+.input-contenedor select option {
+    background-color: #78288C; /* Fondo del menú desplegable */
+    color: #fff;
+    letter-spacing: 3px;
+    
+}
+
+/* Estilo para campos autocompletados */
+.input-contenedor input:-webkit-autofill,
+.input-contenedor select:-webkit-autofill {
+    box-shadow: 0 0 0 30px #78288C inset; /* Cambia el color al fondo deseado */
+    -webkit-text-fill-color: #fff !important; /* Cambia el color del texto */
+}
+
+/* Desactivar estilos de autocompletado */
+.input-contenedor input:-webkit-autofill,
+.input-contenedor select:-webkit-autofill {
+    -webkit-box-shadow: none !important;
+    transition: background-color 5000s ease-in-out 0s; /* Agregar transición para algunos navegadores */
+}
+
+
+@media only screen and (max-width: 600px) {
+    .contenedor {
+        width: 90%;
+        margin-top: 100px;
+    }
+
+    .input-contenedor select {
+        background-position: right 5px top 50%;
+    }
+
+    .logo-container {
+        position: absolute;
+        top: 10px;
+        left: 30%;
+        /* width: 100%; */
+        /* height: 50px; */
+    }
 }
