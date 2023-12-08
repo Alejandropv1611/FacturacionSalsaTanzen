@@ -252,12 +252,29 @@ h1 {
     
 }
 
+#attendance-date {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#attendance-date:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
 #save-btn {
     padding: 10px;
     background-color: var(--color-primary);
     color: #fff;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
+}
+
+#save-btn:hover {
+    background-color: #6a2675; 
 }
 
 #mark-all-btns {
@@ -316,6 +333,7 @@ input[type="checkbox"] {
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
  #currentPage {
