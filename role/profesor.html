@@ -52,42 +52,51 @@
                         <span class="material-icons-sharp">dark_mode</span>
                     </div>
                 </div>
+                <div id="container">
+                <h1>Asistencia</h1>
+
+                <div class="date-container">
+                    <input type="date" id="attendance-date">
+                    <button id="save-btn">Guardar</button>
+                </div>
+
+                <div id="mark-all-btns">
+                    <button id="mark-all">Marcar Todos</button>
+                    <button id="unmark-all">Desmarcar Todos</button>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nr. Participantes</th>
+                            <th>Alumno</th>
+                            <th>Rol</th>
+                            <th>Asistencia</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Estudiante 1</td>
+                            <td>Rol 1</td>
+                            <td class="checkbox-col"><input type="checkbox"></td>
+                            <td>Activo</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Estudiante 2</td>
+                            <td>Rol 2</td>
+                            <td class="checkbox-col"><input type="checkbox"></td>
+                            <td>Inactivo</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button id="add-student-btn">Agregar Estudiante</button>
+                
             </div>
-
         </main>
-    </div>
-
-    <div id="container">
-        <h1>Asistencia</h1>
-
-        <div class="date-container">
-            <input type="date" id="attendance-date">
-            <button id="save-btn">Guardar</button>
-        </div>
-
-        <div id="mark-all-btns">
-            <button id="mark-all">Marcar Todos</button>
-            <button id="unmark-all">Desmarcar Todos</button>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Alumno</th>
-                    <th>Asistencia</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Estudiante 1</td>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                </tr>
-                <tr>
-                    <td>Estudiante 2</td>
-                    <td class="checkbox-col"><input type="checkbox"></td>
-                </tr>
-            </tbody>
-        </table>
     </div>
 
     <script src="../js/darkmode.js"></script>
