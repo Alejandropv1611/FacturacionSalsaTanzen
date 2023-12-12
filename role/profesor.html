@@ -1,105 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/profesor.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/profesor.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+    />
     <title>Profesor</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <aside>
-            <div class="top">
-                <div class="logo">
-                    <img src="../img/cropped-logoFinal-1024x965.png">
-                </div>
-                <div class="close" id="close-btn">
-                    <span class="material-icons-sharp">close</span>
-                </div>
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="../img/cropped-logoFinal-1024x965.png" />
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="#" class="active">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Asistencia</h3>
+          </a>
+          <a href="/Agents.html">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Informacion</h3>
+          </a>
+          <a href="/Ranking-table.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Facturacion</h3>
+          </a>
+          <a href="../index.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Salir</h3>
+             </a>
+             <a href="#"></a>
+        </div>
+      </aside>
+      <main>
+        <h1>Profesor</h1>
+
+        <div class="right">
+          <div class="top">
+            <button id="menu-btn">
+              <span class="material-icons-sharp">menu</span>
+            </button>
+            <div class="theme-toggler">
+              <span class="material-icons-sharp active">light_mode</span>
+              <span class="material-icons-sharp">dark_mode</span>
+            </div>
+          </div>
+
+          <div id="container">
+            <h1>Asistencia</h1>
+
+            <div class="date-container">
+              <input type="date" id="attendance-date" />
+              <button id="save-btn">Guardar</button>
             </div>
 
-            <div class="sidebar">
-                <a href="#" class="active">
-                    <span class="material-icons-sharp">grid_view</span>
-                    <h3>Asistencia</h3>
-                </a>
-                <a href="/Agents.html">
-                    <span class="material-icons-sharp">person_outline</span>
-                    <h3>Informacion</h3>
-                </a>
-                <a href="/Ranking-table.html">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Facturacion</h3>
-                </a>
-                <a href="#">
-
-                </a>
+            <div id="mark-all-btns">
+              <button id="mark-all" onclick="marcarTodos()">
+                Marcar Todos
+              </button>
+              <button id="unmark-all" onclick="desmarcarTodos()">
+                Desmarcar Todos
+              </button>
             </div>
-        </aside>
-        <main>
-            <h1>Profesor</h1>
 
-            <div class="right">
-                <div class="top">
-                    <button id="menu-btn">
-                        <span class="material-icons-sharp">menu</span>
-                    </button>
-                    <div class="theme-toggler">
-                        <span class="material-icons-sharp active">light_mode</span>
-                        <span class="material-icons-sharp">dark_mode</span>
-                    </div>
-                </div>
-                <div id="container">
-                <h1>Asistencia</h1>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nr. Participantes</th>
+                  <th>Alumno</th>
+                  <th>Rol</th>
+                  <th>Asistencia</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Primer conjunto -->
+                <tr>
+                  <td>1</td>
+                  <td>Estudiante 1</td>
+                  <td>Rol 1</td>
+                  <td class="checkbox-col">
+                    <input
+                      type="checkbox"
+                      class="checkbox-asistencia"
+                      value="first_checkbox"
+                      onchange="cambiarTexto(this)"
+                    />
+                    <label>No asistió</label>
+                  </td>
+                  <td>Activo</td>
+                </tr>
+                <!-- Segundo conjunto -->
+                <tr>
+                  <td>2</td>
+                  <td>Estudiante 2</td>
+                  <td>Rol 2</td>
+                  <td class="checkbox-col">
+                    <input
+                      type="checkbox"
+                      class="checkbox-asistencia"
+                      value="first_checkbox"
+                      onchange="cambiarTexto(this)"
+                    />
+                    <label>No asistió</label>
+                  </td>
+                  <td>Inactivo</td>
+                </tr>
+                <!-- Tercero conjunto -->
+                <tr>
+                  <td>3</td>
+                  <td>Estudiante 3</td>
+                  <td>Rol 3</td>
+                  <td class="checkbox-col">
+                    <input
+                      type="checkbox"
+                      class="checkbox-asistencia"
+                      value="first_checkbox"
+                      onchange="cambiarTexto(this)"
+                    />
+                    <label>No asistió</label>
+                  </td>
+                  <td>Inactivo</td>
+                </tr>
+                <!-- Cuarto conjunto -->
+                <tr>
+                  <td>4</td>
+                  <td>Estudiante 4</td>
+                  <td>Rol 4</td>
+                  <td class="checkbox-col">
+                    <input
+                      type="checkbox"
+                      class="checkbox-asistencia"
+                      value="first_checkbox"
+                      onchange="cambiarTexto(this)"
+                    />
+                    <label>No asistió</label>
+                  </td>
+                  <td>Inactivo</td>
+                </tr>
+                <!-- Puedes seguir así para más conjuntos -->
+              </tbody>
+            </table>
 
-                <div class="date-container">
-                    <input type="date" id="attendance-date">
-                    <button id="save-btn">Guardar</button>
-                </div>
-
-                <div id="mark-all-btns">
-                    <button id="mark-all">Marcar Todos</button>
-                    <button id="unmark-all">Desmarcar Todos</button>
-                </div>
-
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Nr. Participantes</th>
-                            <th>Alumno</th>
-                            <th>Rol</th>
-                            <th>Asistencia</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Estudiante 1</td>
-                            <td>Rol 1</td>
-                            <td class="checkbox-col"><input type="checkbox"></td>
-                            <td>Activo</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Estudiante 2</td>
-                            <td>Rol 2</td>
-                            <td class="checkbox-col"><input type="checkbox"></td>
-                            <td>Inactivo</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <button id="add-student-btn">Agregar Estudiante</button>
-                
-            </div>
-        </main>
+            <button id="add-student-btn">Agregar Estudiante</button>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script src="../js/darkmode.js"></script>
-        
-</body>
+    <script src="../js/asistencia.js"></script>
+  </body>
 </html>
