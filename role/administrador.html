@@ -53,13 +53,110 @@
                     </div>
                 </div>
             </div>
+            <div id="container">
+                <h1>Asistencia</h1>
 
+                <div class="date-container">
+                    <input type="date" id="attendance-date" />
+                    <button id="save-btn">Guardar</button>
+                </div>
+
+                <div id="mark-all-btns">
+                <button id="mark-all" onclick="marcarTodos()">
+                    Marcar Todos
+                </button>
+                <button id="unmark-all" onclick="desmarcarTodos()">
+                    Desmarcar Todos
+                </button>
+                </div>
+
+                <table>
+                <thead>
+                    <tr>
+                    <th>Nr. Participantes</th>
+                    <th>Alumno</th>
+                    <th>Rol</th>
+                    <th>Asistencia</th>
+                    <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Primer conjunto -->
+                    <tr>
+                    <td>1</td>
+                    <td>Estudiante 1</td>
+                    <td>Rol 1</td>
+                    <td class="checkbox-col">
+                        <input
+                        type="checkbox"
+                        class="checkbox-asistencia"
+                        value="first_checkbox"
+                        onchange="cambiarTexto(this)"
+                        />
+                        <label>No asistió</label>
+                    </td>
+                    <td>Activo</td>
+                    </tr>
+                    <!-- Segundo conjunto -->
+                    <tr>
+                    <td>2</td>
+                    <td>Estudiante 2</td>
+                    <td>Rol 2</td>
+                    <td class="checkbox-col">
+                        <input
+                        type="checkbox"
+                        class="checkbox-asistencia"
+                        value="first_checkbox"
+                        onchange="cambiarTexto(this)"
+                        />
+                        <label>No asistió</label>
+                    </td>
+                    <td>Inactivo</td>
+                    </tr>
+                    <!-- Tercero conjunto -->
+                    <tr>
+                    <td>3</td>
+                    <td>Estudiante 3</td>
+                    <td>Rol 3</td>
+                    <td class="checkbox-col">
+                        <input
+                        type="checkbox"
+                        class="checkbox-asistencia"
+                        value="first_checkbox"
+                        onchange="cambiarTexto(this)"
+                        />
+                        <label>No asistió</label>
+                    </td>
+                    <td>Inactivo</td>
+                    </tr>
+                    <!-- Cuarto conjunto -->
+                    <tr>
+                    <td>4</td>
+                    <td>Estudiante 4</td>
+                    <td>Rol 4</td>
+                    <td class="checkbox-col">
+                        <input
+                        type="checkbox"
+                        class="checkbox-asistencia"
+                        value="first_checkbox"
+                        onchange="cambiarTexto(this)"
+                        />
+                        <label>No asistió</label>
+                    </td>
+                    <td>Inactivo</td>
+                    </tr>
+                    <!-- Puedes seguir así para más conjuntos -->
+                </tbody>
+                </table>
+
+                <button id="add-student-btn">Agregar Estudiante</button>
+                </div>
+            </div>
         </main>
     </div>
 
-    
-
     <script src="../js/darkmode.js"></script>
+    <script src="../js/asistencia.js"></script>
     
 </body>
 </html>
