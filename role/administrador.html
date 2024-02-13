@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="../css/admin.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="../css/modal.css">
+
     <title>Document</title>
 </head>
+
 <body>
 
     <div class="container">
@@ -26,7 +30,7 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Asistencia</h3>
                 </a>
-                <a href="/Agents.html">
+                <a href="admin_Informacion.html">
                     <span class="material-icons-sharp">person_outline</span>
                     <h3>Informacion</h3>
                 </a>
@@ -56,107 +60,197 @@
             <div id="container">
                 <h1>Asistencia</h1>
 
-                <div class="date-container">
-                    <input type="date" id="attendance-date" />
-                    <button id="save-btn">Guardar</button>
+
+                <div class="container-buscador">
+                    <div class="search-container">
+                        <label for="mi-lugar">Selecciona un Lugar</label>
+                        <select id="mi-lugar" name="mi-lugar"></select>
+                    </div>
+
+                    <div class="search-container">
+                        <label for="mi-dia">Selecciona el Día</label>
+                        <select id="mi-dia" name="mi-dia"></select>
+                    </div>
+
+                    <div class="search-container">
+                        <label for="mi-hora">Selecciona la Hora</label>
+                        <select id="mi-hora" name="mi-hora"></select>
+                    </div>
+
+                    <button id="search-btn" class="search-btn">Buscar</button>
                 </div>
 
+                <br><br>
+
+
+                <!-- <div class="date-container">
+                    <input type="date" id="attendance-date" />
+                    <button id="save-btn">Guardar</button>
+                </div> -->
+
                 <div id="mark-all-btns">
-                <button id="mark-all" onclick="marcarTodos()">
-                    Marcar Todos
-                </button>
-                <button id="unmark-all" onclick="desmarcarTodos()">
-                    Desmarcar Todos
-                </button>
+                    <button id="mark-all" onclick="marcarTodos()">
+                        Marcar Todos
+                    </button>
+                    <button id="unmark-all" onclick="desmarcarTodos()">
+                        Desmarcar Todos
+                    </button>
                 </div>
 
                 <table>
-                <thead>
-                    <tr>
-                    <th>Nr. Participantes</th>
-                    <th>Alumno</th>
-                    <th>Rol</th>
-                    <th>Asistencia</th>
-                    <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Primer conjunto -->
-                    <tr>
-                    <td>1</td>
-                    <td>Estudiante 1</td>
-                    <td>Rol 1</td>
-                    <td class="checkbox-col">
-                        <input
-                        type="checkbox"
-                        class="checkbox-asistencia"
-                        value="first_checkbox"
-                        onchange="cambiarTexto(this)"
-                        />
-                        <label>No asistió</label>
-                    </td>
-                    <td>Activo</td>
-                    </tr>
-                    <!-- Segundo conjunto -->
-                    <tr>
-                    <td>2</td>
-                    <td>Estudiante 2</td>
-                    <td>Rol 2</td>
-                    <td class="checkbox-col">
-                        <input
-                        type="checkbox"
-                        class="checkbox-asistencia"
-                        value="first_checkbox"
-                        onchange="cambiarTexto(this)"
-                        />
-                        <label>No asistió</label>
-                    </td>
-                    <td>Inactivo</td>
-                    </tr>
-                    <!-- Tercero conjunto -->
-                    <tr>
-                    <td>3</td>
-                    <td>Estudiante 3</td>
-                    <td>Rol 3</td>
-                    <td class="checkbox-col">
-                        <input
-                        type="checkbox"
-                        class="checkbox-asistencia"
-                        value="first_checkbox"
-                        onchange="cambiarTexto(this)"
-                        />
-                        <label>No asistió</label>
-                    </td>
-                    <td>Inactivo</td>
-                    </tr>
-                    <!-- Cuarto conjunto -->
-                    <tr>
-                    <td>4</td>
-                    <td>Estudiante 4</td>
-                    <td>Rol 4</td>
-                    <td class="checkbox-col">
-                        <input
-                        type="checkbox"
-                        class="checkbox-asistencia"
-                        value="first_checkbox"
-                        onchange="cambiarTexto(this)"
-                        />
-                        <label>No asistió</label>
-                    </td>
-                    <td>Inactivo</td>
-                    </tr>
-                    <!-- Puedes seguir así para más conjuntos -->
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th>Nr. Participantes</th>
+                            <th>Alumno</th>
+                            <th>Rol</th>
+                            <th>Asistencia</th>
+                            <th>Status</th>
+                            <th>
+                                <p>Pasos</p>
+                                <select name="" id="">
+                                  <option value="">paso 1</option>
+                                  <option value="">paso 2</option>
+                                  <option value="">paso 3</option>
+                                </select>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Primer conjunto -->
+                        <tr>
+                            <td>1</td>
+                            <td>Estudiante 1</td>
+                            <td>Rol 1</td>
+                            <td class="checkbox-col">
+                                <input type="checkbox" class="checkbox-asistencia" value="first_checkbox"
+                                    onchange="cambiarTexto(this)" />
+                                <label>No asistió</label>
+                            </td>
+                            <td>Activo</td>
+                        </tr>
+                        <!-- Segundo conjunto -->
+                        <tr>
+                            <td>2</td>
+                            <td>Estudiante 2</td>
+                            <td>Rol 2</td>
+                            <td class="checkbox-col">
+                                <input type="checkbox" class="checkbox-asistencia" value="first_checkbox"
+                                    onchange="cambiarTexto(this)" />
+                                <label>No asistió</label>
+                            </td>
+                            <td>Inactivo</td>
+                        </tr>
+                        <!-- Tercero conjunto -->
+                        <tr>
+                            <td>3</td>
+                            <td>Estudiante 3</td>
+                            <td>Rol 3</td>
+                            <td class="checkbox-col">
+                                <input type="checkbox" class="checkbox-asistencia" value="first_checkbox"
+                                    onchange="cambiarTexto(this)" />
+                                <label>No asistió</label>
+                            </td>
+                            <td>Inactivo</td>
+                        </tr>
+                        <!-- Cuarto conjunto -->
+                        <tr>
+                            <td>4</td>
+                            <td>Estudiante 4</td>
+                            <td>Rol 4</td>
+                            <td class="checkbox-col">
+                                <input type="checkbox" class="checkbox-asistencia" value="first_checkbox"
+                                    onchange="cambiarTexto(this)" />
+                                <label>No asistió</label>
+                            </td>
+                            <td>Inactivo</td>
+                        </tr>
+                        <!-- Puedes seguir así para más conjuntos -->
+                    </tbody>
                 </table>
 
                 <button id="add-student-btn">Agregar Estudiante</button>
-                </div>
             </div>
-        </main>
+    </div>
+    </main>
     </div>
 
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2 style="text-align: center;">Agregar Estudiante</h2>
+            <form id="student-form" class="tab-form">
+
+
+                <div class="campos-form">
+                    <label for="FechaIngreso">Fecha Ingreso:</label>
+                    <input type="date" id="FechaIngreso" name="FechaIngreso" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="apellido">Apellido:</label>
+                    <input type="text" id="apellido" name="apellido" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="cursos">Curso/s:</label>
+                    <select id="cursos" name="cursos" required>
+                        <option value="curso1">Salsa-Shaere-mAR01</option>
+                        <option value="curso2">Salsa-Shaere-mAR01</option>
+                        <option value="curso3">Bachata Lüd LUN02</option>
+                    </select>
+                </div>
+
+                <div class="campos-form">
+                    <label for="rol">Rol:</label>
+                    <select id="rol" name="rol" required>
+                        <option value="leader">Leader</option>
+                        <option value="follower">Follower</option>
+                    </select>
+                </div>
+
+                <div class="campos-form">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="telefono">Telefono:</label>
+                    <input type="number" id="telefono" name="telefono" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="ultimaAsistencia">UltimaAsistencia:</label>
+                    <input type="date" id="ultimaAsistencia" name="ultimaAsistencia" required>
+                </div>
+
+                <div class="campos-form">
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="solvente">Solvente</option>
+                        <option value="debe">Debe</option>
+                    </select>
+                </div>
+
+                <div class="campos-form">
+                    <button type="button" onclick="guardarEstudiante()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/darkmode.js"></script>
     <script src="../js/asistencia.js"></script>
-    
+    <script src="../js/admin.js"></script>
+    <script src="../js/select.js"></script>
+
+
 </body>
+
 </html>

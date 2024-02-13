@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css"
+    />
+    <link rel="stylesheet" href="../css/modal.css" />
+    <title>Document</title>
+  </head>
+  
+  
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="../img/cropped-logoFinal-1024x965.png" />
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons-sharp">close</span>
+          </div>
+        </div>
+
+        <div class="sidebar">
+          <a href="administrador.html">
+            <span class="material-icons-sharp">grid_view</span>
+            <h3>Asistencia</h3>
+          </a>
+          <a href="admin_Informacion.html" class="active">
+            <span class="material-icons-sharp">person_outline</span>
+            <h3>Informacion</h3>
+          </a>
+          <a href="/Ranking-table.html">
+            <span class="material-icons-sharp">insights</span>
+            <h3>Facturacion</h3>
+          </a>
+          <a href="#"> </a>
+        </div>
+      </aside>
+      <main>
+        <h1>Administrador</h1>
+
+        <div class="right">
+          <div class="top">
+            <button id="menu-btn">
+              <span class="material-icons-sharp">menu</span>
+            </button>
+            <div class="theme-toggler">
+              <span class="material-icons-sharp active">light_mode</span>
+              <span class="material-icons-sharp">dark_mode</span>
+            </div>
+          </div>
+        </div>
+        <div id="container">
+
+
+
+          <div class="container-admin">
+            <h1>Control de Estudiantes</h1>
+    
+            <table id="estudiantes-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha de ingreso</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Curso/s</th>
+                        <th>Rol</th>
+                        <th>Email</th>
+                        <th>Telefono</th>
+                        <th>Ultima asistencia</th>
+                        <th>Historial de facturas</th>
+                        <th>Status</th>
+                        <th>Asistencia</th>
+                        <th>Acciones</th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Datos se agregarán aquí mediante JavaScript -->
+                </tbody>
+            </table>
+        </div>
+
+          <button id="add-student-btn">Agregar Estudiante</button>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <h2 style="text-align: center">Agregar Estudiante</h2>
+        <form id="student-form" class="tab-form">
+          <div class="campos-form">
+            <label for="FechaIngreso">Fecha Ingreso:</label>
+            <input type="date" id="FechaIngreso" name="FechaIngreso" required />
+          </div>
+
+          <div class="campos-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+
+          <div class="campos-form">
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required />
+          </div>
+
+          <div class="campos-form">
+            <label for="cursos">Curso/s:</label>
+            <select id="cursos" name="cursos" required>
+              <option value="curso1">Salsa-Shaere-mAR01</option>
+              <option value="curso2">Salsa-Shaere-mAR01</option>
+              <option value="curso3">Bachata Lüd LUN02</option>
+            </select>
+          </div>
+
+          <div class="campos-form">
+            <label for="rol">Rol:</label>
+            <select id="rol" name="rol" required>
+              <option value="leader">Leader</option>
+              <option value="follower">Follower</option>
+            </select>
+          </div>
+
+          <div class="campos-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="campos-form">
+            <label for="telefono">Telefono:</label>
+            <input type="number" id="telefono" name="telefono" required />
+          </div>
+
+          <div class="campos-form">
+            <label for="ultimaAsistencia">UltimaAsistencia:</label>
+            <input
+              type="date"
+              id="ultimaAsistencia"
+              name="ultimaAsistencia"
+              required
+            />
+          </div>
+
+          <div class="campos-form">
+            <label for="status">Status:</label>
+            <select id="status" name="status" required>
+              <option value="solvente">Solvente</option>
+              <option value="debe">Debe</option>
+            </select>
+          </div>
+
+          <div class="campos-form">
+            <button type="button" onclick="guardarEstudiante()">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/asistencia.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

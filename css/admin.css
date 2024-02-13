@@ -168,6 +168,7 @@ aside .sidebar {
     height: 86vh;
     position: relative;
     top: 3rem;
+    color: #202528;
 }
 
 aside h3 {
@@ -176,7 +177,7 @@ aside h3 {
 
 aside .sidebar a{
     display: flex;
-    color: var(--color-info-dark);
+    color: #363949;
     margin-left: 2rem;
     gap: 1rem;
     align-items: center;
@@ -316,6 +317,8 @@ th, td {
 th {
     background-color: var(--color-primary);
     color: #fff;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .checkbox-col {
@@ -380,6 +383,41 @@ input[type="checkbox"] {
     color: white;
     border-radius: var(--border-radius-1);
 }
+
+/* ======================= Incio Buscador ===================== */
+.container-buscador{
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+}
+.search-container{
+    margin: 0px auto;
+    text-align: center;
+    display: grid;
+}
+
+.search-container select{
+    width: 150px;
+    padding:  10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.search-btn{
+    padding: 10px;
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 10%;
+}
+
+
+
+/* ======================= Fin Buscador ===================== */
 
 
 /* ======================= RESPONSIVE ===================== */
@@ -494,6 +532,8 @@ input[type="checkbox"] {
         font-size: 2rem;
     }
 }
+
+
 
 @media screen and (max-width: 480px) {
     .container{
